@@ -1,12 +1,14 @@
 import express from "express";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
+import cors from "cors"
 import transactions from "./routes/transactions.js";
 import weeklyTransaction from "./routes/weeklyTransaction.js";
 import monthlyTransaction from "./routes/monthlyTransaction.js";
 
 
 const app = express();
+app.use(cors())
 dotenv.config();
 
 app.use(express.json());
